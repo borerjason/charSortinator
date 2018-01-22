@@ -8,12 +8,14 @@ const app = express();
 
 app.use('/', express.static(path.join(__dirname, '../app')));
 
-bodyparser.urlEncoded();
+bodyParser.urlencoded();
+bodyParser.json();
 
-app.get('/word', (req, res) => {
-  console.log(req.body);
-  let word = req.body;
-  let sorted = charSort(); 
+app.post('/word', (req, res) => {
+  console.log('PINGED');
+  console.log(req);
+  // let word = req.body;
+  // let sorted = charSort(); 
 });
 
 app.listen(8080, () => {
