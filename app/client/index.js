@@ -1,14 +1,10 @@
 $(document).ready(() => {
   
-  // const axios = require('axios');
-  
   $('form').submit((event) => {
     event.preventDefault();
     let val = $('input').val();
     console.log(val);
 
-    // axios.post('/word', {
-    //   body: val
     fetch('/word', {
       method: 'POST',
       body: JSON.stringify({val}),
@@ -16,11 +12,11 @@ $(document).ready(() => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then((result) => {
-      console.log(result);
-    }).catch((err) => {
-      console.log(err);
-    });
+    }).then((res => res.json()))
+    .then((response => {
+      console.log(response);
+      $('.words').append(response.word);
+    }))
   });
 }); 
   
