@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/borerjason/charSortinator#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "express": "^4.16.2",
     "path": "^0.12.7"
   },
