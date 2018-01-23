@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+table {
+  padding: 15px;
+}
+
+th, td {
+  padding: 5px;
+}
