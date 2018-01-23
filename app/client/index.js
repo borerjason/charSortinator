@@ -3,9 +3,8 @@ $(document).ready(() => {
   $('form').submit((event) => {
     event.preventDefault();
     let val = $('input').val();
-    console.log(val);
 
-    fetch('/word', {
+    fetch('/sort', {
       method: 'POST',
       body: JSON.stringify({val}),
       headers: {
@@ -17,6 +16,8 @@ $(document).ready(() => {
       console.log(response);
       $('table').append(`<tr><td>${val}</td><td>${response.sorted}</td></tr>`);
     }))
+
+    $('input').val('');
   });
 }); 
   

@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 app.use('/', express.static(path.join(__dirname, '../app')));
 
-app.post('/word', (req, res) => {
+app.post('/sort', (req, res) => {
   let word = req.body.val;
   let sorted = charSort(word); 
   res.send(200, { sorted });
