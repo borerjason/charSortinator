@@ -15,7 +15,7 @@ $(document).ready(() => {
     }).then((res => res.json()))
     .then((response => {
       console.log(response);
-      $('.words').append(response.word);
+      $('table').append(`<tr><td>${val}</td><td>${response.sorted}</td></tr>`);
     }))
   });
 }); 
