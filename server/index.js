@@ -6,9 +6,8 @@ const charSort = require('./SortChars');
 
 const app = express();
 
-app.use(bodyParser.json());
-
 app.use('/', express.static(path.join(__dirname, '../app')));
+app.use(bodyParser.json());
 
 app.post('/sort', (req, res) => {
   let word = req.body.val;
